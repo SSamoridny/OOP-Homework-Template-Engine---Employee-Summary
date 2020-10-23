@@ -13,6 +13,7 @@ const render = require("./lib/htmlRenderer");
 //This is our empty user array
 let userList = []
 let userId = 1
+console.log(Manager)
 
 //Creation of an asynchronus function to wrap our code in
 async function main(){
@@ -42,7 +43,19 @@ async function main(){
     // loop through and get user name/title for each person
     for( var i=0; i<managerInfo.teamMembers; i++ ){
         // ... YOUR CODE HERE PROMPT FOR THE EMPLOYEES ...
-        const employeeInfo = await inquirer.prompt ([
+        const employeeType = await inquirer.prompt ([
+            {
+                type: "list",
+                name: "type",
+                message: "What is this employee's role?",
+                choices: [
+                    "Software Engineer",
+                    "Intern",
+                ]
+            }])
+        employeeType = employeeType.type
+
+        const employeeInfo = await inquirer.prompt([
             {
                 name: "name",
                 message: "What is the employee's name?"
@@ -52,36 +65,35 @@ async function main(){
                 message: "What is the employee's e-mail?" 
             },
             {
-                name: "role",
-                type: "checkbox",
-                message: "What is this employee's role?",
-                choices: [
-                    "Software Engineer",
-                    "Intern",
-                ]
-            }]
-        )
+                name: "info", // this is either 'github' or 'school' depending on employeeType
+                message: `What is the ${employeeType}'s ${employeeType=='Engineer' ? 'GitHub' : 'School'}?`
+    
+            }])
+
+            const employee = employeeType==='Engineer' 
+            ? new Engineer( employeeInfo.name, userId++, employeeInfo.email, employeeInfo.info )
+            : new Intern( employeeInfo.name, userId++, employeeInfo.email, employeeInfo.info )
 
         //If Else statement to decide info between Engineer and Intern
-        const softwareEngineer = new Engineer( engineerInfo.name, userId++, engineerInfo.email, engineerInfo.github )
-        userList.push( softwareEngineer )
+        //const softwareEngineer = new Engineer( engineerInfo.name, userId++, engineerInfo.email, engineerInfo.github )
+        //userList.push( softwareEngineer )
 
-        const newIntern = new Intern( internInfo.name, userId++, internInfo.email, internInfo.school )
-        userList.push( newIntern )
+        // const newIntern = new Intern( internInfo.name, userId++, internInfo.email, internInfo.school )
+        // userList.push( newIntern )
         
         //Engieer required info
-        if( employeeInfo.role === "Software Engineer"){
-            const engineerInfo = await inquirer.prompt([{
-                name: "github",
-                message: "What is the engineer's GitHub name?",
-            }])
-        } else {
-            //Intern required info
-            const internInfo = await inquirer.prompt([{
-                name: "school",
-                message: "What school is the intern from?",
-            }])
-        }
+        // if( employeeInfo.role === "Software Engineer"){
+        //     const engineerInfo = await inquirer.prompt([{
+        //         name: "github",
+        //         message: "What is the engineer's GitHub name?",
+        //     }])
+        // } else {
+        //     //Intern required info
+        //     const internInfo = await inquirer.prompt([{
+        //         name: "school",
+        //         message: "What school is the intern from?",
+        //     }])
+        // }
         //This pushed the info to our empty array
         userList.push( employee )
     }
