@@ -1,52 +1,75 @@
-<!-- Main Template with template literal -->
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>My Team</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Staatliches&display=swap" rel="stylesheet">
-    <title>SamoDev Industries</title>
+    <script src="https://kit.fontawesome.com/c502137733.js"></script>
 </head>
-<body style="background-color: aliceblue;">
+
+<body>
     <div class="container-fluid">
-        <div class="row" style="background-color: #53bd6e; height: 130px; border: 5px solid navy;">
-            <p class="mx-auto my-auto" style=" font-size: 40px; color: #ffffff; text-shadow: -1px -1px 0 navy, 1px -1px 0 navy, -1px 1px 0 navy, 1px 1px 0 navy; font-family: 'Krona One', sans-serif;">SamoDev Development Team</p>
+        <div class="row">
+            <div class="col-12 jumbotron mb-3 team-heading" style="background-color: #0d0e0d; height: 130px; border: 5px solid gray;">
+                <h1 class="text-center" style=" font-size: 40px; color: #ffffff; text-shadow: -1px -1px gray, 1px -1px 0 gray, -1px 1px 0 gray, 1px 1px 0 gray; font-family: 'Krona One', sans-serif;">My Team</h1>
+            </div>
         </div>
-        
-        <div class="row mt-5">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-                <div class="row justify-content-center">
-
-                    <!-- Team HTML will be placed here using template literals -->
-                    
-<!-- Engineer Template with template literals -->
-
-<div class="card m-3 " style="width: 20rem;">
-    <div class="card-header text-white bg-primary">
-        <h3 style="font-family: 'Krona One', sans-serif;">Shaun Samoridny</h3>
-        <h5 style="font-family: 'Krona One', sans-serif;"">Manager</h5>
     </div>
-    <div class="card-body bg-light text-dark">
+    <div class="container">
+        <div class="row">
+            <div class="team-area col-12 d-flex justify-content-center">
+                
+<div class="card employee-card">
+    <div class="card-header">
+        <h2 class="card-title">Shaun</h2>
+        <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>Manager</h3>
+    </div>
+    <div class="card-body">
         <ul class="list-group">
-            <li class="list-group-item" style="font-size: 14px;">ID: 1</li>
-            <li class="list-group-item" style="font-size: 14px;">Email: ssamoridny@gmail.com</li>
-            <li class="list-group-item" style="font-size: 14px;">GitHub: SSamoridny</li>
+            <li class="list-group-item">ID: 16</li>
+            <li class="list-group-item">Email: <a href="mailto: shaun@mail.com">shaun@mail.com</a></li>
+            <li class="list-group-item">Office number: 10</li>
         </ul>
     </div>
 </div>
 
-                </div>
+<div class="card employee-card">
+    <div class="card-header">
+        <h2 class="card-title">Maiya</h2>
+        <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>Engineer</h3>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">ID: 11</li>
+            <li class="list-group-item">Email: maiya@mail.com</a></li>
+            <li class="list-group-item">GitHub: <a href="https://github.com/maiyaGitHub" target="_blank" rel="noopener noreferrer">maiyaGitHub</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="card employee-card">
+    <div class="card-header">
+        <h2 class="card-title">Bailey</h2>
+        <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>Intern</h3>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">ID: 17</li>
+            <li class="list-group-item">Email: bailey@mail.com</a></li>
+            <li class="list-group-item">School: USC</li>
+        </ul>
+    </div>
+</div>
+
             </div>
-            <div class="col-md-2"></div>
-
         </div>
-
     </div>
 </body>
+
 </html>
