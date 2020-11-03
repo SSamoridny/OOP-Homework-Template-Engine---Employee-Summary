@@ -1,4 +1,4 @@
-// ===== Node Packages =====
+// Node requirements
 const inquirer = require("inquirer");
 const fs = require("fs");
 
@@ -6,14 +6,11 @@ const Manager = require("./lib/Manager");
 const Intern = require("./lib/Intern");
 const Engineer = require("./lib/Engineer");
 
-// ===== START FUNCTION ===== 
 async function start(){
     console.log("Team Builder");
 
-    // Set Variable to hold HTML
     let teamHTML = "";
 
-    // Variable to hold number of team members
     let teamSize;
 
     // First Question to ask to set up loop
@@ -26,12 +23,10 @@ async function start(){
     )
     .then((data) => {
 
-        // Number of team members placed in teamSize for scope purposes.
-        // 1 is added start from 1 rather than 0 for user understanding.
         teamSize = data.noOfTeamMem + 1;
     });
     
-    // If Team Size is 0, will end program
+    // Error check if choice is 0
     if (teamSize === 0){
         console.log("I guess there is no one on your team...");
         return;
@@ -40,7 +35,7 @@ async function start(){
     // Loop begins to ask questions depending on the size of the team
     for(i = 1; i < teamSize; i++){
 
-        // Global variables set
+        // Global variables
         let name;
         let id;
         let title;
